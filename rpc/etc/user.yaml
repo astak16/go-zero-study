@@ -1,0 +1,8 @@
+Name: user.rpc
+ListenOn: 0.0.0.0:8080
+Etcd:
+  Hosts:
+  - etcd-server:2379
+  Key: user.rpc
+Mysql:
+  DataSource: root:123456@tcp(go-uccs-1:3306)/zero_study?charset=utf8mb4&parseTime=True&loc=Local

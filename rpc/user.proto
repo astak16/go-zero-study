@@ -1,0 +1,34 @@
+syntax = "proto3";
+package user;
+option go_package = "./user";
+
+
+// type UserRequest {
+// 	Username string `json:"username"`
+// 	Password string `json:"password"`
+// }
+
+// type UserInfoResponse {
+// 	Username string `json:"username"`
+// 	UserId   string `json:"userId"`
+// }
+
+message UserRequest{
+  string username = 1;
+  string password = 2;
+}
+
+message UserResponse{
+  string username = 1;
+  uint32 userId = 2;
+}
+
+message UserInfoRequest{
+  uint32 userId = 1;
+}
+
+service user {
+  rpc UserInfo(UserInfoRequest)returns(UserResponse);
+  rpc Login (UserRequest) returns(UserResponse);
+  rpc UserCreate(UserRequest)returns(UserResponse);
+}

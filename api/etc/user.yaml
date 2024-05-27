@@ -1,0 +1,11 @@
+Name: user
+Host: 0.0.0.0
+Port: 8888
+Auth:
+  AccessSecret: 123456789qwert
+  AccessExpire: 3600
+UserRpc:
+  Etcd:
+    Hosts:
+    - etcd-server:2379
+    Key: user.rpc
